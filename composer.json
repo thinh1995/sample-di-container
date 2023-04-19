@@ -1,0 +1,28 @@
+{
+    "name": "lucifer/ioc",
+    "type": "library",
+    "keywords": ["library", "ioc"],
+    "require": {
+        "psr/container": "^2.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lucifer\\IoC\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thinh1995",
+            "email": "cuongthinhtuan2006@gmail.com"
+        }
+    ]
+}

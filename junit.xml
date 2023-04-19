@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="5" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.004318">
+    <testsuite name="IoC" tests="5" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.004318">
+      <testsuite name="Tests\IoC\ContainerTest" file="/Users/lucifer/Desktop/php_demo/SampleIoC/tests/IoC/ContainerTest.php" tests="5" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.004318">
+        <testcase name="test_instance_method" class="Tests\IoC\ContainerTest" classname="Tests.IoC.ContainerTest" file="/Users/lucifer/Desktop/php_demo/SampleIoC/tests/IoC/ContainerTest.php" line="31" assertions="1" time="0.002954"/>
+        <testcase name="test_bind_method" class="Tests\IoC\ContainerTest" classname="Tests.IoC.ContainerTest" file="/Users/lucifer/Desktop/php_demo/SampleIoC/tests/IoC/ContainerTest.php" line="47" assertions="2" time="0.000447"/>
+        <testcase name="test_singleton_method" class="Tests\IoC\ContainerTest" classname="Tests.IoC.ContainerTest" file="/Users/lucifer/Desktop/php_demo/SampleIoC/tests/IoC/ContainerTest.php" line="72" assertions="1" time="0.000414"/>
+        <testcase name="test_resolve_method" class="Tests\IoC\ContainerTest" classname="Tests.IoC.ContainerTest" file="/Users/lucifer/Desktop/php_demo/SampleIoC/tests/IoC/ContainerTest.php" line="92" assertions="2" time="0.000324"/>
+        <testcase name="test_resolve_method_method" class="Tests\IoC\ContainerTest" classname="Tests.IoC.ContainerTest" file="/Users/lucifer/Desktop/php_demo/SampleIoC/tests/IoC/ContainerTest.php" line="116" assertions="1" time="0.000179"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
