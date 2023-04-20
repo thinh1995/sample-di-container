@@ -12,68 +12,68 @@ use ReflectionException;
 
 class Container implements ContainerInterface
 {
-	private static Container|null $instance = null;
+    private static Container|null $instance = null;
 
-	protected array $bindings = [];
+    protected array $bindings = [];
 
-	/**
-	 * @return static
-	 */
-	public static function instance(): static
-	{
-		if (self::$instance === null) {
-			self::$instance = new Container;
-		}
+    /**
+     * @return static
+     */
+    public static function instance(): static
+    {
+        if (self::$instance === null) {
+            self::$instance = new Container;
+        }
 
-		return self::$instance;
-	}
+        return self::$instance;
+    }
 
     /**
      * @param string $id
      * @param string|Closure $namespace
      * @return $this
      */
-	public function bind(string $id, string|Closure $namespace): Container
-	{
-		$this->bindings[$id] = $namespace;
-
-		return $this;
-	}
-
-	/**
-	 * @param string $id
-	 * @param object $instance
-	 * @return $this
-	 */
-	public function singleton(string $id, object $instance): Container
-	{
-		$this->bindings[$id] = $instance;
-
-		return $this;
-	}
-
-	/**
-	 * @param string $id
-	 * @return mixed
-	 * @throws Exception
-	 */
-	public function get(string $id): mixed
+    public function bind(string $id, string|Closure $namespace): Container
     {
-		if ($this->has($id)) {
-			return $this->bindings[$id];
-		}
+        $this->bindings[$id] = $namespace;
 
-		throw new NotFoundException("Container entry not found for: {$id}");
-	}
+        return $this;
+    }
 
-	/**
-	 * @param string $id
-	 * @return bool
-	 */
-	public function has(string $id): bool
-	{
-		return array_key_exists($id, $this->bindings);
-	}
+    /**
+     * @param string $id
+     * @param object $instance
+     * @return $this
+     */
+    public function singleton(string $id, object $instance): Container
+    {
+        $this->bindings[$id] = $instance;
+
+        return $this;
+    }
+
+    /**
+     * @param string $id
+     * @return mixed
+     * @throws Exception
+     */
+    public function get(string $id): mixed
+    {
+        if ($this->has($id)) {
+            return $this->bindings[$id];
+        }
+
+        throw new NotFoundException("Container entry not found for: {$id}");
+    }
+
+    /**
+     * @param string $id
+     * @return bool
+     */
+    public function has(string $id): bool
+    {
+        return array_key_exists($id, $this->bindings);
+    }
 
     /**
      * @param string $namespace
@@ -84,10 +84,10 @@ class Container implements ContainerInterface
      * @throws NotFoundExceptionInterface
      * @throws ReflectionException
      */
-	public function resolve(string $namespace, array $args = []):mixed
-	{
-		return (new ClassResolver($this, $namespace, $args))->getInstance();
-	}
+    public function resolve(string $namespace, array $args = []): mixed
+    {
+        return (new ClassResolver($this, $namespace, $args))->getInstance();
+    }
 
     /**
      * @param object $instance
@@ -98,8 +98,8 @@ class Container implements ContainerInterface
      * @throws NotFoundExceptionInterface
      * @throws ReflectionException
      */
-	public function resolveMethod(object $instance, string $method, array $args = []): mixed
-	{
-		return (new MethodResolver($this, $instance, $method, $args))->getValue();
-	}
+    public function resolveMethod(object $instance, string $method, array $args = []): mixed
+    {
+        return (new MethodResolver($this, $instance, $method, $args))->getValue();
+    }
 }

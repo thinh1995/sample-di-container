@@ -23,9 +23,7 @@ class ContainerTest extends TestCase
         $container = Container::instance();
         $reflection = new ReflectionClass($container);
         $instance = $reflection->getProperty('instance');
-        $instance->setAccessible(true);
         $instance->setValue(null);
-        $instance->setAccessible(false);
     }
 
     public function test_instance_method()
@@ -119,7 +117,7 @@ class ContainerTest extends TestCase
 
         $container = Container::instance();
 
-        $container->bind(ExampleInterface::class, ExampleClass::class);
+        $container->singleton(ExampleInterface::class, new ExampleClass());
 
         $instance = $container->resolve(AppClass::class);
 

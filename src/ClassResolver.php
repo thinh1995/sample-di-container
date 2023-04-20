@@ -40,6 +40,10 @@ class ClassResolver
                 return $binding();
             }
 
+            if (is_object($binding)) {
+                return $binding;
+            }
+
             // sets the namespace to the bound container namespace
             $this->namespace = $binding;
         }
