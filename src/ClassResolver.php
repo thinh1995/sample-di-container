@@ -20,7 +20,8 @@ class ClassResolver
         protected ContainerInterface $container,
         protected string $namespace,
         protected array $args = []
-    ) {}
+    ) {
+    }
 
     /**
      * @return mixed

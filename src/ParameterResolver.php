@@ -23,7 +23,8 @@ class ParameterResolver
         public string $namespace,
         public array $parameters,
         public array $args = []
-    ) {}
+    ) {
+    }
 
     /**
      * @return array

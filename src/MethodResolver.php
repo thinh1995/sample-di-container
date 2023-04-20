@@ -21,7 +21,8 @@ class MethodResolver
         protected object $instance,
         protected string $method,
         protected array $args = []
-    ) {}
+    ) {
+    }
 
     /**
      * @return mixed
